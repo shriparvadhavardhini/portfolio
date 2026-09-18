@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shri — Web Designer &amp; Developer</title>
+<meta name="description" content="Portfolio of Shri, an IT student and creative web designer building modern, interactive digital experiences." />
+
+<!-- Google Fonts (CDN) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <span class="loader__name">SHRI</span>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+  </div>
+</div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="progress" id="progress"></div>
+
+<!-- ============ CUSTOM CURSOR (desktop only) ============ -->
+<div class="cursor" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav__logo">SHRI<span>.</span></a>
+
+  <nav class="nav__links" id="navLinks">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <!-- decorative background layers -->
+  <div class="hero__bg" aria-hidden="true">
+    <div class="blob blob--1" data-depth="0.03"></div>
+    <div class="blob blob--2" data-depth="0.05"></div>
+    <div class="blob blob--3" data-depth="0.02"></div>
+    <div class="grid-glow"></div>
+  </div>
+  <canvas class="particles" id="particles" aria-hidden="true"></canvas>
+
+  <div class="hero__inner">
+
+    <!-- LEFT -->
+    <div class="hero__copy">
+      <p class="eyebrow">IT student · Chennai based</p>
+
+      <h1 class="hero__title">
+        <span class="line"><span>Hi, I'm Shri</span></span>
+        <span class="line accent"><span>I build websites.</span></span>
+      </h1>
+
+      <p class="hero__text">
+        Creative IT student and web designer passionate about building modern,
+        interactive and visually engaging digital experiences.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--solid">View my work</a>
+        <a href="#contact" class="btn btn--ghost">Let's connect</a>
+      </div>
+
+      <ul class="hero__stats">
+        <li><strong>3+</strong><span>Shipped projects</span></li>
+        <li><strong>11</strong><span>Tools &amp; languages</span></li>
+        <li><strong>∞</strong><span>Cups of filter coffee</span></li>
+      </ul>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="hero__stage" id="heroStage">
+      <div class="stage__ring" aria-hidden="true"></div>
+      <div class="stage__glow" aria-hidden="true"></div>
+
+      <div class="character" id="character">
+        <img src="assets/character.png" alt="3D illustrated character of Shri" />
+        <div class="character__shadow" aria-hidden="true"></div>
+      </div>
+
+      <!-- floating UI chips -->
+      <div class="chip chip--a" data-depth="0.08">
+        <span class="dot"></span> Available for work
+      </div>
+      <div class="chip chip--b" data-depth="0.14">
+        <strong>&lt;/&gt;</strong> HTML · CSS · JS
+      </div>
+      <div class="chip chip--c" data-depth="0.11">
+        <strong>UI</strong> Design &amp; build
+      </div>
+    </div>
+
+  </div>
+
+  <a href="#about" class="scroll-hint">Scroll<span></span></a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <div class="wrap about__grid">
+
+    <div class="reveal">
+      <h2 class="section__title">About me</h2>
+      <p class="lead">
+        I'm Shri, an IT student and creative web designer who enjoys combining
+        technology and design to create engaging digital experiences.
+      </p>
+      <p class="body">
+        I started with curiosity about how pages are put together and stayed for the
+        details: the weight of a heading, the timing of a hover, the moment a layout
+        finally clicks into place on a small screen. I design in the browser, write my
+        own markup and scripts, and care as much about how something feels to use as
+        how it looks in a screenshot.
+      </p>
+      <p class="body">
+        Right now I'm building interfaces for web projects, sharpening my JavaScript,
+        and looking for internships where I can learn from people who ship real products.
+      </p>
+
+      <dl class="facts">
+        <div><dt>Studying</dt><dd>Information Technology</dd></div>
+        <div><dt>Focus</dt><dd>Front-end &amp; UI design</dd></div>
+        <div><dt>Working in</dt><dd>HTML, CSS, JavaScript, Python</dd></div>
+      </dl>
+    </div>
+
+    <div class="about__card reveal" id="aboutCard">
+      <div class="glass tilt" data-tilt>
+        <img src="assets/character.png" alt="Shri's character illustration" class="about__char" />
+        <div class="about__base"></div>
+      </div>
+      <span class="label label--1">Web design</span>
+      <span class="label label--2">UI / UX</span>
+      <span class="label label--3">Creative</span>
+      <span class="label label--4">Developer</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section skills" id="skills">
+  <div class="wrap">
+    <h2 class="section__title reveal">Skills</h2>
+    <p class="section__sub reveal">The toolkit I reach for, grouped by what it's for.</p>
+
+    <div class="skills__group reveal">
+      <h3 class="group__name">Programming</h3>
+      <div class="cards">
+        <article class="card tilt" data-tilt><i class="ic">&lt;/&gt;</i><h4>HTML</h4><p>Semantic, accessible structure</p></article>
+        <article class="card tilt" data-tilt><i class="ic">#</i><h4>CSS</h4><p>Layout, motion, 3D transforms</p></article>
+        <article class="card tilt" data-tilt><i class="ic">JS</i><h4>JavaScript</h4><p>Interaction and DOM logic</p></article>
+        <article class="card tilt" data-tilt><i class="ic">Py</i><h4>Python</h4><p>Scripting and Flask basics</p></article>
+      </div>
+    </div>
+
+    <div class="skills__group reveal">
+      <h3 class="group__name">Design</h3>
+      <div class="cards">
+        <article class="card tilt" data-tilt><i class="ic">◳</i><h4>UI design</h4><p>Layout systems and components</p></article>
+        <article class="card tilt" data-tilt><i class="ic">✦</i><h4>Graphic design</h4><p>Posters, brand assets, type</p></article>
+        <article class="card tilt" data-tilt><i class="ic">◈</i><h4>Canva</h4><p>Fast visual production</p></article>
+        <article class="card tilt" data-tilt><i class="ic">◐</i><h4>Creative direction</h4><p>Mood, palette, visual identity</p></article>
+      </div>
+    </div>
+
+    <div class="skills__group reveal">
+      <h3 class="group__name">Other</h3>
+      <div class="cards">
+        <article class="card tilt" data-tilt><i class="ic">⑂</i><h4>GitHub</h4><p>Version control and releases</p></article>
+        <article class="card tilt" data-tilt><i class="ic">▭</i><h4>Responsive design</h4><p>375px to 1920px, one layout</p></article>
+        <article class="card tilt" data-tilt><i class="ic">◇</i><h4>Web development</h4><p>Building and shipping pages</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section projects" id="projects">
+  <div class="wrap">
+    <h2 class="section__title reveal">Selected work</h2>
+    <p class="section__sub reveal">Three projects that taught me the most. Click any card for the full story.</p>
+
+    <div class="projects__list">
+
+      <article class="project reveal" data-project="priorityx" tabindex="0" role="button" aria-label="Open PriorityX project details">
+        <div class="project__media"><img src="assets/project1.jpg" alt="PriorityX interface preview" /></div>
+        <div class="project__body">
+          <h3>PriorityX</h3>
+          <p>An intelligent product ordering site that ranks deliveries by urgency instead of first-come order.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python Flask</li></ul>
+          <span class="link">View project</span>
+        </div>
+      </article>
+
+      <article class="project reveal" data-project="mediflow" tabindex="0" role="button" aria-label="Open MediFlow project details">
+        <div class="project__media"><img src="assets/project2.jpg" alt="MediFlow interface preview" /></div>
+        <div class="project__body">
+          <h3>MediFlow</h3>
+          <p>A calm healthcare booking interface where patients pick a doctor, slot and reason in under a minute.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python Flask</li><li>SQLite</li></ul>
+          <span class="link">View project</span>
+        </div>
+      </article>
+
+      <article class="project reveal" data-project="portfolio" tabindex="0" role="button" aria-label="Open Creative Portfolio project details">
+        <div class="project__media"><img src="assets/project3.jpg" alt="Creative portfolio preview" /></div>
+        <div class="project__body">
+          <h3>Creative portfolio</h3>
+          <p>This site: a 3D, character-led portfolio built with nothing but HTML, CSS and vanilla JavaScript.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <span class="link">View project</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <img src="assets/character.png" alt="" class="projects__peek" id="projectsPeek" aria-hidden="true" />
+</section>
+
+<!-- ============ SOCIAL ============ -->
+<section class="section social">
+  <div class="wrap">
+    <h2 class="section__title reveal">Follow me</h2>
+    <p class="section__sub reveal">Let's create something amazing.</p>
+
+    <div class="social__grid">
+      <a class="social__card tilt reveal" data-tilt href="https://github.com/your-username" target="_blank" rel="noopener">
+        <i class="ic">⑂</i><h4>GitHub</h4><p>Code and experiments</p>
+      </a>
+      <a class="social__card tilt reveal" data-tilt href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">
+        <i class="ic">in</i><h4>LinkedIn</h4><p>Work and updates</p>
+      </a>
+      <a class="social__card tilt reveal" data-tilt href="https://www.instagram.com/your-handle" target="_blank" rel="noopener">
+        <i class="ic">◎</i><h4>Instagram</h4><p>Design and process</p>
+      </a>
+      <a class="social__card tilt reveal" data-tilt href="mailto:youremail@example.com">
+        <i class="ic">✉</i><h4>Email</h4><p>Say hello directly</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="wrap contact__inner">
+    <img src="assets/character.png" alt="" class="contact__char" aria-hidden="true" />
+    <div class="reveal">
+      <h2 class="section__title">Let's work together</h2>
+      <p class="lead">Have an idea, project or website in mind? Let's turn it into something beautiful.</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="mailto:youremail@example.com?subject=Project%20enquiry">Email me</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Shri</span>
+  <span>Designed and built by hand</span>
+</footer>
+
+<!-- ============ PROJECT MODAL ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel" role="document">
+    <button class="modal__close" data-close aria-label="Close project details">×</button>
+    <img class="modal__img" id="modalImg" src="" alt="" />
+    <div class="modal__content">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <h4>Built with</h4>
+      <ul class="tags" id="modalTags"></ul>
+      <h4>Features</h4>
+      <ul class="features" id="modalFeatures"></ul>
+      <a class="btn btn--solid" id="modalLink" href="#" target="_blank" rel="noopener">View project</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
