@@ -1,10 +1,11 @@
 /* =========================================================
    SHRI — portfolio script (vanilla JS, no libraries)
-   1. Helpers            2. Loading screen
-   3. Navigation         4. Scroll progress + reveal
-   5. Custom cursor      6. Character parallax
-   7. 3D card tilt       8. Particles
-   9. Project modal      10. Misc
+   1. Helpers            2. Theme toggle
+   3. Loading screen      4. Navigation
+   5. Scroll progress + reveal
+   6. Custom cursor      7. Character parallax
+   8. 3D card tilt       9. Particles
+   10. Project modal      11. Misc
    ========================================================= */
 
 (function () {
@@ -20,7 +21,36 @@
 
   $('#year').textContent = new Date().getFullYear();
 
-  /* ---------- 2. LOADING SCREEN ---------- */
+  /* ---------- 2. THEME TOGGLE ---------- */
+  const THEME_KEY = 'shri-theme';
+  const root = document.documentElement;
+  const themeToggle = $('#themeToggle');
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+      themeToggle.classList.toggle('is-light', theme === 'light');
+    }
+  }
+
+  // the initial theme was already applied pre-paint by the inline script in
+  // <head> (to avoid a flash); this just makes sure the toggle icon/label match.
+  applyTheme(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+      try { localStorage.setItem(THEME_KEY, next); } catch (err) { /* storage unavailable */ }
+    });
+  }
+
+  /* ---------- 3. LOADING SCREEN ---------- */
   const loader = $('#loader');
   const loaderBar = $('#loaderBar');
   let pct = 0;
@@ -39,7 +69,7 @@
   window.addEventListener('load', hideLoader);
   setTimeout(hideLoader, 2000); // safety net so it never hangs
 
-  /* ---------- 3. NAVIGATION ---------- */
+  /* ---------- 4. NAVIGATION ---------- */
   const nav       = $('#nav');
   const navLinks  = $('#navLinks');
   const burger    = $('#burger');
@@ -69,7 +99,7 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach(s => navObserver.observe(s));
 
-  /* ---------- 4. SCROLL PROGRESS + REVEAL ---------- */
+  /* ---------- 5. SCROLL PROGRESS + REVEAL ---------- */
   const progress = $('#progress');
 
   function onScroll() {
@@ -89,7 +119,7 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
   $$('.reveal').forEach(el => revealObserver.observe(el));
 
-  /* ---------- 5. CUSTOM CURSOR (desktop only) ---------- */
+  /* ---------- 6. CUSTOM CURSOR (desktop only) ---------- */
   const dot  = $('#cursorDot');
   const ring = $('#cursorRing');
 
@@ -115,7 +145,7 @@
     });
   }
 
-  /* ---------- 6. CHARACTER PARALLAX ---------- */
+  /* ---------- 7. CHARACTER PARALLAX ---------- */
   const character = $('#character');
   const stage     = $('#heroStage');
   const depthEls  = $$('[data-depth]');
@@ -154,7 +184,7 @@
     stage.addEventListener('mouseleave', () => { character.style.scale = '1'; });
   }
 
-  /* ---------- 7. 3D CARD TILT ---------- */
+  /* ---------- 8. 3D CARD TILT ---------- */
   if (!isTouch && !reduced) {
     $$('[data-tilt]').forEach(card => {
       let raf = null;
@@ -182,7 +212,7 @@
     });
   }
 
-  /* ---------- 8. PARTICLES (hero canvas) ---------- */
+  /* ---------- 9. PARTICLES (hero canvas) ---------- */
   const canvas = $('#particles');
   if (canvas && !reduced) {
     const ctx = canvas.getContext('2d');
@@ -210,7 +240,7 @@
         if (d.y < -10) { d.y = h + 10; d.x = Math.random() * w; }
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(245,199,126,${d.a})`;
+        ctx.fillStyle = `rgba(255,196,0,${d.a})`;
         ctx.fill();
       });
       requestAnimationFrame(draw);
@@ -221,7 +251,7 @@
     window.addEventListener('resize', size);
   }
 
-  /* ---------- 9. PROJECT MODAL ---------- */
+  /* ---------- 10. PROJECT MODAL ---------- */
   /* Edit project details here. */
   const PROJECTS = {
     priorityx: {
@@ -308,7 +338,7 @@
     if (e.key === 'Escape' && !modal.hidden) closeModal();
   });
 
-  /* ---------- 10. MISC ---------- */
+  /* ---------- 11. MISC ---------- */
   // smooth scroll fallback for browsers without CSS scroll-behavior
   if (!('scrollBehavior' in document.documentElement.style)) {
     $$('a[href^="#"]').forEach(a => {

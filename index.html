@@ -6,6 +6,16 @@
 <title>Shri — Web Designer &amp; Developer</title>
 <meta name="description" content="Portfolio of Shri, an IT student and creative web designer building modern, interactive digital experiences." />
 
+<!-- Apply saved theme before first paint, to avoid a flash of the wrong theme -->
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('shri-theme');
+    if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  } catch (err) { /* storage unavailable, default (dark) applies */ }
+})();
+</script>
+
 <!-- Google Fonts (CDN) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,17 +45,34 @@
 <header class="nav" id="nav">
   <a href="#home" class="nav__logo">SHRI<span>.</span></a>
 
-  <nav class="nav__links" id="navLinks">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="nav__right">
+    <nav class="nav__links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span>
-  </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Toggle theme">
+      <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M20.5 14.5c-1 .4-2 .6-3.1.6-5 0-9-4-9-9 0-1.6.4-3.1 1.2-4.4C6 2.6 3 6.4 3 11c0 5.5 4.5 10 10 10 4 0 7.4-2.4 9-5.8-.5.2-1 .3-1.5.3Z" fill="currentColor"/>
+      </svg>
+      <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+        <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M12 2.5v2.4"/><path d="M12 19.1v2.4"/>
+          <path d="M4.2 4.2l1.7 1.7"/><path d="M18.1 18.1l1.7 1.7"/>
+          <path d="M2.5 12h2.4"/><path d="M19.1 12h2.4"/>
+          <path d="M4.2 19.8l1.7-1.7"/><path d="M18.1 5.9l1.7-1.7"/>
+        </g>
+      </svg>
+    </button>
+
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
 </header>
 
 <main>
@@ -65,16 +92,16 @@
 
     <!-- LEFT -->
     <div class="hero__copy">
-      <p class="eyebrow">IT student · Chennai based</p>
+      <p class="eyebrow">IT student · Coimbatore based</p>
 
       <h1 class="hero__title">
         <span class="line"><span>Hi, I'm Shri</span></span>
-        <span class="line accent"><span>I build websites.</span></span>
+        <span class="line accent"><span>I Am A Software Developer</span></span>
       </h1>
 
       <p class="hero__text">
-        Creative IT student and web designer passionate about building modern,
-        interactive and visually engaging digital experiences.
+        I’m an IT student, creative website designer, and developer 
+        who enjoys turning ideas into visually engaging and functional digital experiences.
       </p>
 
       <div class="hero__actions">
@@ -123,8 +150,8 @@
     <div class="reveal">
       <h2 class="section__title">About me</h2>
       <p class="lead">
-        I'm Shri, an IT student and creative web designer who enjoys combining
-        technology and design to create engaging digital experiences.
+       I’m an IT student, creative website designer, and developer 
+       who enjoys turning ideas into visually engaging and functional digital experiences.
       </p>
       <p class="body">
         I started with curiosity about how pages are put together and stayed for the
@@ -140,8 +167,8 @@
 
       <dl class="facts">
         <div><dt>Studying</dt><dd>Information Technology</dd></div>
-        <div><dt>Focus</dt><dd>Front-end &amp; UI design</dd></div>
-        <div><dt>Working in</dt><dd>HTML, CSS, JavaScript, Python</dd></div>
+        <div><dt>Focus</dt><dd>Front-end, UI design, AI tools</dd></div>
+        <div><dt>Working in</dt><dd>HTML, CSS, JavaScript, Python, php, SQL</dd></div>
       </dl>
     </div>
 
