@@ -254,9 +254,10 @@
   /* ---------- 10. PROJECT MODAL ---------- */
   /* Edit project details here. */
   const PROJECTS = {
+
     priorityx: {
       title: 'PriorityX',
-      image: 'assets/project1.jpg',
+      image: 'assets/project1.png',
       desc: 'A product ordering site that sorts deliveries by how urgent they are, not by who clicked first. Customers set a priority when they order, and the dashboard re-sequences the queue in real time so critical items move to the front.',
       tech: ['HTML', 'CSS', 'JavaScript', 'Python Flask'],
       features: [
@@ -267,9 +268,10 @@
       ],
       link: 'https://github.com/your-username/priorityx'
     },
+
     mediflow: {
       title: 'MediFlow',
-      image: 'assets/project2.jpg',
+      image: 'assets/project2.png',
       desc: 'A healthcare appointment booking interface designed around one goal: let a patient find a doctor, pick a slot and confirm in under a minute. The visual language is deliberately quiet — clinics are stressful enough.',
       tech: ['HTML', 'CSS', 'JavaScript', 'Python Flask', 'SQLite'],
       features: [
@@ -280,9 +282,10 @@
       ],
       link: 'https://github.com/your-username/mediflow'
     },
+
     portfolio: {
       title: 'Creative portfolio',
-      image: 'assets/project3.jpg',
+      image: 'assets/project3.png',
       desc: 'This site. A character-led 3D portfolio built with nothing but HTML, CSS and vanilla JavaScript — no frameworks, no build step. Every effect is hand-written: the tilt, the parallax, the particle field and the modal you are reading now.',
       tech: ['HTML', 'CSS', 'JavaScript'],
       features: [
@@ -293,7 +296,78 @@
         'Reduced-motion support for accessibility'
       ],
       link: 'https://github.com/your-username/portfolio'
-    }
+    },
+
+    LuckeyDangle: {
+      title: 'Luckey Dangle',
+      image: 'assets/project4.png',
+      desc: 'A fun and interactive game designed to challenge players.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Python Flask'],
+      features: [
+        'Priority-based ordering queue with live re-sorting',
+        'Customer dashboard for tracking order status',
+        'Admin view for managing and reassigning deliveries',
+        'Responsive layout that works down to 375px'
+      ],
+      link: 'https://github.com/your-username/priorityx'
+    },
+
+    SkillProff: {
+      title: 'Skill Proff',
+      image: 'assets/project5.png',
+      desc: 'A skill-based game designed to challenge players.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Python Flask'],
+      features: [
+        'Priority-based ordering queue with live re-sorting',
+        'Customer dashboard for tracking order status',
+        'Admin view for managing and reassigning deliveries',
+        'Responsive layout that works down to 375px'
+      ],
+      link: 'https://github.com/your-username/priorityx'
+    },
+
+    AuraPosters: {
+      title: 'Auraposters',
+      image: 'assets/project6.png',
+      desc: 'A creative poster design platform for artists and designers.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Python Flask'],
+      features: [
+        'Priority-based ordering queue with live re-sorting',
+        'Customer dashboard for tracking order status',
+        'Admin view for managing and reassigning deliveries',
+        'Responsive layout that works down to 375px'
+      ],
+      link: 'https://github.com/your-username/priorityx'
+    },
+
+    FindCals: {
+      title: 'FindCals',
+      image: 'assets/project7.png',
+      desc: 'A calorie tracking application.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Python Flask'],
+      features: [
+        'Priority-based ordering queue with live re-sorting',
+        'Customer dashboard for tracking order status',
+        'Admin view for managing and reassigning deliveries',
+        'Responsive layout that works down to 375px'
+      ],
+      link: 'https://github.com/your-username/priorityx'
+    },
+
+    ModelPortfolio: {
+      title: 'Model Portfolio',
+      image: 'assets/project8.png',
+      desc: 'A portfolio website for showcasing creative work.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Python Flask'],
+      features: [
+        'Priority-based ordering queue with live re-sorting',
+        'Customer dashboard for tracking order status',
+        'Admin view for managing and reassigning deliveries',
+        'Responsive layout that works down to 375px'
+      ],
+      link: 'https://github.com/your-username/priorityx'
+    },
+
   };
 
   const modal     = $('#modal');

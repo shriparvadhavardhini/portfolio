@@ -586,7 +586,7 @@ body.no-cursor .cursor,body.no-cursor .cursor-ring{ display:none; }
 .modal[hidden]{ display:none; }
 .modal__backdrop{
   position:absolute; inset:0;
-  background:rgba(0,0,0,.78); backdrop-filter:blur(8px);
+  background:rgba(0, 0, 0, 0.78); backdrop-filter:blur(8px);
   animation:fadeIn .35s var(--ease);
 }
 .modal__panel{
