@@ -351,7 +351,7 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/your-username/priorityx'
+      link: 'https://github.com/shriparvadhavardhini/FindCals'
     },
 
     ModelPortfolio: {
@@ -365,7 +365,7 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/your-username/priorityx'
+      link: 'https://github.com/shriparvadhavardhini/Model-Portfolio'
     },
 
   };
