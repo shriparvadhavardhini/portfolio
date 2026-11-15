@@ -266,7 +266,7 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/your-username/priorityx'
+      link: 'https://github.com/shriparvadhavardhini/PriorityX'
     },
 
     mediflow: {
@@ -280,7 +280,7 @@
         'Appointment history stored in SQLite',
         'Clear confirmation and cancellation flows'
       ],
-      link: 'https://github.com/your-username/mediflow'
+      link: 'https://github.com/shriparvadhavardhini/MediFlow'
     },
 
     portfolio: {
@@ -295,7 +295,7 @@
         'Fully responsive from 1920px down to 375px',
         'Reduced-motion support for accessibility'
       ],
-      link: 'https://github.com/your-username/portfolio'
+      link: 'https://github.com/shriparvadhavardhini/portfolio'
     },
 
     LuckeyDangle: {
@@ -309,7 +309,7 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/your-username/priorityx'
+      link: 'https://github.com/shriparvadhavardhini/LuckeyDangle'
     },
 
     SkillProff: {
@@ -323,7 +323,7 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/your-username/priorityx'
+      link: 'https://github.com/shriparvadhavardhini/SkillProff'
     },
 
     AuraPosters: {
@@ -337,7 +337,7 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/your-username/priorityx'
+      link: 'https://github.com/shriparvadhavardhini/AuraFarming'
     },
 
     FindCals: {
