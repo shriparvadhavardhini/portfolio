@@ -614,7 +614,9 @@ body.no-cursor .cursor,body.no-cursor .cursor-ring{ display:none; }
   content:""; position:absolute; left:0; top:10px;
   width:7px; height:7px; border-radius:2px; background:var(--orange); rotate:45deg;
 }
-.modal__content .btn{ margin-top:30px; }
+.modal__actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+.modal__actions .btn{ margin-top:0; }
+.modal__actions [hidden]{ display:none; }
 .modal__close{
   position:absolute; top:16px; right:16px; z-index:2;
   width:42px; height:42px; border-radius:50%; cursor:pointer;

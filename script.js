@@ -252,7 +252,7 @@
   }
 
   /* ---------- 10. PROJECT MODAL ---------- */
-  /* Edit project details here. */
+  /* Add each deployed site URL in that project's liveLink field. */
   const PROJECTS = {
 
     priorityx: {
@@ -266,7 +266,8 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/shriparvadhavardhini/PriorityX'
+      link: 'https://github.com/shriparvadhavardhini/PriorityX',
+      liveLink: 'https://priority-x.vercel.app/'
     },
 
     mediflow: {
@@ -280,7 +281,8 @@
         'Appointment history stored in SQLite',
         'Clear confirmation and cancellation flows'
       ],
-      link: 'https://github.com/shriparvadhavardhini/MediFlow'
+      link: 'https://github.com/shriparvadhavardhini/MediFlow',
+      liveLink: 'https://medi-flow-livid.vercel.app'
     },
 
     portfolio: {
@@ -295,7 +297,8 @@
         'Fully responsive from 1920px down to 375px',
         'Reduced-motion support for accessibility'
       ],
-      link: 'https://github.com/shriparvadhavardhini/portfolio'
+      link: 'https://github.com/shriparvadhavardhini/portfolio',
+      liveLink: 'https://shriparvadhavardhini.netlify.app/'
     },
 
     LuckeyDangle: {
@@ -309,7 +312,8 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/shriparvadhavardhini/LuckeyDangle'
+      link: 'https://github.com/shriparvadhavardhini/LuckeyDangle',
+      liveLink: 'https://luckydangle.netlify.app/'
     },
 
     SkillProff: {
@@ -323,7 +327,8 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/shriparvadhavardhini/SkillProff'
+      link: 'https://github.com/shriparvadhavardhini/SkillProff',
+      liveLink: 'https://skillproof7.netlify.app/'
     },
 
     AuraPosters: {
@@ -337,7 +342,8 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/shriparvadhavardhini/AuraFarming'
+      link: 'https://github.com/shriparvadhavardhini/AuraFarming',
+      liveLink: 'https://resilient-lamington-1eeb86.netlify.app/'
     },
 
     FindCals: {
@@ -351,7 +357,8 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/shriparvadhavardhini/FindCals'
+      link: 'https://github.com/shriparvadhavardhini/FindCals',
+      liveLink: 'https://find-cals-seven.vercel.app'
     },
 
     ModelPortfolio: {
@@ -365,7 +372,23 @@
         'Admin view for managing and reassigning deliveries',
         'Responsive layout that works down to 375px'
       ],
-      link: 'https://github.com/shriparvadhavardhini/Model-Portfolio'
+      link: 'https://github.com/shriparvadhavardhini/Model-Portfolio',
+      liveLink: 'https://poojaportfolio2402.netlify.app/'
+    },
+
+    CyberShield: {
+      title: 'CyberShield',
+      image: 'assets/project9.png',
+      desc: 'A Web application security learning platform.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Python Flask'],
+      features: [
+        'Priority-based ordering queue with live re-sorting',
+        'Customer dashboard for tracking order status',
+        'Admin view for managing and reassigning deliveries',
+        'Responsive layout that works down to 375px'
+      ],
+      link: 'https://github.com/shriparvadhavardhini/CyberShield7',
+      liveLink: 'https://cyber-shield7.vercel.app/'
     },
 
   };
@@ -388,6 +411,9 @@
     modalTags.innerHTML = p.tech.map(t => `<li>${t}</li>`).join('');
     modalFeat.innerHTML = p.features.map(f => `<li>${f}</li>`).join('');
     $('#modalLink').href = p.link;
+    const liveLink = $('#modalLiveLink');
+    liveLink.href = p.liveLink || '#';
+    liveLink.hidden = !p.liveLink;
 
     modal.hidden = false;
     document.body.classList.add('is-locked');
